@@ -7,15 +7,19 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
+import TurbolinksAdapter from 'vue-turbolinks'
+import VueResource from 'vue-resource'
 
-document.addEventListener('DOMContentLoaded', () => {
+Vue.use(VueResource)
+Vue.use(TurbolinksAdapter)
+
+document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
     render: h => h(App)
   }).$mount()
-  document.body.appendChild(app.$el)
 
-  console.log(app)
-})
+  document.body.appendChild(app.$el)
+});
 
 
 // The above code uses Vue without the compiler, which means you cannot
