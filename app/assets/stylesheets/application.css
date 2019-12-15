@@ -12,5 +12,5 @@
  *
  *= require_tree .
  *= require_self
- *= require bulma/bulma.css
+ *= require bootstrap/dist/css/bootstrap.css
  */
