@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: [:show, :edit, :update, :destroy, :fulfilled_jobs]
+  before_action :set_company, only: [:show, :edit, :update, :destroy, :fulfilled_jobs, :partial_jobs]
 
   # GET /companies
   # GET /companies.json
@@ -63,6 +63,10 @@ class CompaniesController < ApplicationController
 
   def fulfilled_jobs
     @jobs_joined = JobsFulfilled.list(company: @company)
+  end
+
+  def partial_jobs
+    @jobs_joined = JobsPartial.list(company: @company)
   end
 
   private

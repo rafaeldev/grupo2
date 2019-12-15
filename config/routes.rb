@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post 'students/skills/:id' => 'students#update_skills', as: 'student_update_skills'
 
   get 'companies/:id/fulfilled_jobs' => 'companies#fulfilled_jobs', as: 'show_fulfilled_jobs'
+  get 'companies/:id/partial_jobs' => 'companies#partial_jobs', as: 'show_partial_jobs'
 end
