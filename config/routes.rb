@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :students
+
+  post 'students/skills/:id' => 'students#update_skills', as: 'student_update_skills'
 end
