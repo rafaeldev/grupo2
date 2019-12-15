@@ -15,6 +15,28 @@
     email: Faker::Internet.safe_email,
     site: Faker::Internet.url,
     cnpj: "45535206000154",
-    about: Faker::Lorem.paragraph(2)
+    about: Faker::Lorem.paragraph(sentence_count: 2)
   })
 end
+
+Skill.create([
+  { name: "Lógica de programação", kind: :generic },
+  { name: "HTML + CSS", kind: :frontend },
+  { name: "Javascript", kind: :frontend },
+  { name: "ReactJS", kind: :frontend },
+  { name: "Ruby", kind: :backend },
+  { name: "Java", kind: :backend },
+  { name: "Python", kind: :backend },
+  { name: "C#", kind: :backend }
+])
+
+company1 = Company.first
+
+Job.create([
+  {
+    title: "Assistente de Backend",
+    company: company1,
+    skills: Skill.where(kind: :backend),
+    description: Faker::Lorem.paragraph(sentence_count: 2)
+  }
+])
