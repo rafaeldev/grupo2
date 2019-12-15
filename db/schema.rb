@@ -46,5 +46,16 @@ ActiveRecord::Schema.define(version: 2019_12_15_034120) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.string "address"
+    t.string "phone1"
+    t.string "phone2"
+    t.date "birthday"
+    t.text "biograph"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
   add_foreign_key "jobs", "companies"
 end
