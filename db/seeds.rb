@@ -50,3 +50,13 @@ Student.create({
   biograph: Faker::Lorem.paragraph(sentence_count: 8),
   skills: [Skill.find(1), Skill.find(2), Skill.find(5)],
 })
+
+Student.create({
+  name: Faker::Name.name,
+  address: Faker::Address.full_address,
+  phone1: Faker::PhoneNumber.cell_phone,
+  phone2: Faker::PhoneNumber.phone_number,
+  birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
+  biograph: Faker::Lorem.paragraph(sentence_count: 8),
+  skills: [Skill.find(7)],
+})
