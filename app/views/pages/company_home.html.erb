@@ -1,3 +1,32 @@
 <%= render layout: "pages/company_menu" do %>
-  <h1>SOU A EMPRESA</h1>
+  <div class="container">
+    <h1>Profissionais</h1>
+
+    <h4>Veja aqui os profissionais que podem engressar na sua empresa!</h4>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Atendem</h5>
+              <h2>10</h2>
+              <p class="card-text">Números de profissionais que atendem seus requisitos</p>
+              <a href="#" class="btn btn-primary">Listar</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Podem atender</h5>
+              <h2>20</h2>
+              <p class="card-text">Números de profissionais que atendem ao menos um dos requisitos</p>
+              <a href="#" class="btn btn-primary">Listar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

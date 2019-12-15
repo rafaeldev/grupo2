@@ -1,20 +1,17 @@
-
-<div class="columns">
-  <div class="column is-one-quarter">
-    <aside class="menu">
-      <p class="menu-label">
-        EMPRESA
-      </p>
-      <ul class="menu-list">
-        <li><a>Dashboard</a></li>
-        <li><a>Customers</a></li>
+<div class="row">
+  <nav class="col-lg-2 sidebar navbar-collapse offcanvas-collapse">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item h5">
+          <a class="nav-link" href="/c"> Dashboard </a>
+        </li>
       </ul>
-    </aside>
-  </div>
+    </div>
+  </nav>
 
-  <div class="column">
-    <div class="main-container">
+  <main role="main" class="ml-sm-auto col-lg-10 px-lg-4 no-gutter">
+    <div class="main-container container-fluid pl-md-5 pr-md-5">
       <%= yield %>
     </div>
-  </div>
+  </main>
 </div>
