@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :students
 
   post 'students/skills/:id' => 'students#update_skills', as: 'student_update_skills'
+
+  get 'companies/:id/fulfilled_jobs' => 'companies#fulfilled_jobs', as: 'show_fulfilled_jobs'
 end

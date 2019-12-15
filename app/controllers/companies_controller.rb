@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :set_company, only: [:show, :edit, :update, :destroy, :fulfilled_jobs]
 
   # GET /companies
   # GET /companies.json
@@ -59,6 +59,10 @@ class CompaniesController < ApplicationController
       format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def fulfilled_jobs
+    @jobs_joined = JobsFulfilled.list(company: @company)
   end
 
   private
