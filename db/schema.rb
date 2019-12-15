@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_034120) do
+ActiveRecord::Schema.define(version: 2019_12_15_040654) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(version: 2019_12_15_034120) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "skills_students", id: false, force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "skill_id", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "genre"
@@ -57,5 +62,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_034120) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
   add_foreign_key "jobs", "companies"
 end
