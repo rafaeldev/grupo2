@@ -18,5 +18,12 @@ class PagesController < ApplicationController
   end
 
   def student_home
+    @student = Student.first
+    @skill_map = {}
+    Skill.kinds.each { |k, v| @skill_map[k] = [] }
+
+    Skill.all.each do |s|
+      @skill_map[s.kind] << s
+    end
   end
 end

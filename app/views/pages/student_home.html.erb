@@ -1,3 +1,24 @@
-<%= render layout: "pages/menu" do %>
-  <h1>TEST</h1>
+<%= render layout: "pages/student_menu" do %>
+  <div class="container">
+    <h1>Meus dados de estudante</h1>
+
+    <ul>
+      <% @skill_map.each do |k, skill_list| %>
+      <li>
+        <h4><%= k %></h4>
+
+        <ul>
+          <% skill_list.each do |skill| %>
+          <li>
+            <div class="form-group form-check">
+              <%= check_box_tag skill.name.parameterize, skill.id, skill.in?(@student.skills), class: "form-check-input" %>
+              <label class="form-check-label" for="<%= skill.name.parameterize %>"><%= skill.name %></label>
+            </div>
+          </li>
+          <% end %>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
