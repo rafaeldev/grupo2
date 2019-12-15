@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'c' => 'pages#company_home'
+  get 's' => 'pages#student_home'
+
   resources :companies
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
