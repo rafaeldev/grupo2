@@ -2,20 +2,6 @@
   <div class="container">
     <h1>Profissionais</h1>
 
-    <div class="list-group">
-      <% @jobs_joined.each do |jj| %>
-        <div class="row">
-          <div class="col-8">
-            <div class="font-weight-bold">
-              <%= jj[:student].name %>
-            </div>
-
-            <div>
-              <%= jj[:job].title %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'list_jobs' %>
   </div>
 <% end %>
