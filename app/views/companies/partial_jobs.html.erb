@@ -5,3 +5,52 @@
     <%= render 'list_jobs' %>
   </div>
 <% end %>
+
+<div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content container pb-3">
+      <h2>Detalhes do profissional</h2>
+
+      <div id="student-container" class="container"></div>
+
+      <div class="mt-2">
+        <button type="button" class="btn btn-primary">Apadrinhar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#myModal').on('show.bs.modal', function (e) {
+    const $container = $("#student-container");
+    const endpoint = '<%= "#{student_url}/" %>';
+
+    const attrs = [
+      ["name", "Nome"],
+      ["address", "Enrereço"],
+      ["birthday", "Data de Nascimento"],
+      ["biograph", "Biografia"]
+    ];
+
+    $.getJSON(endpoint, function(data) {
+      $container.empty();
+
+      $.each(attrs, function (i, e) {
+        var $attr = $(document.createElement("div"));
+        $attr.addClass("row mt-3");
+
+        var $col1 = $(document.createElement("div"));
+        $col1.addClass("col-3 font-weight-bold");
+        $col1.text(e[1] + ":");
+
+        var $col2 = $(document.createElement("div"));
+        $col2.addClass("col");
+        $col2.text(data[e[0]]);
+
+        $attr.append($col1, $col2);
+
+        $container.append($attr);
+      })
+    });
+  })
+</script>

@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:update, :update_skills]
+  before_action :set_student, only: [:update, :update_skills, :show]
 
   def update
     respond_to do |format|
@@ -15,6 +15,10 @@ class StudentsController < ApplicationController
 
   def update_skills
     @student.update(skills: Skill.where(id: params["skills"]))
+  end
+
+  def show
+    render json: @student
   end
 
   private
