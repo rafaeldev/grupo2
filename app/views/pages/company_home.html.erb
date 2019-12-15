@@ -10,7 +10,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Atendem</h5>
-              <h2>10</h2>
+              <h2><%= @target_count[:complete] %></h2>
               <p class="card-text">Números de profissionais que atendem seus requisitos</p>
               <a href="#" class="btn btn-primary">Listar</a>
             </div>
@@ -20,7 +20,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Podem atender</h5>
-              <h2>20</h2>
+              <h2><%= @target_count[:partial] %></h2>
               <p class="card-text">Números de profissionais que atendem ao menos um dos requisitos</p>
               <a href="#" class="btn btn-primary">Listar</a>
             </div>
