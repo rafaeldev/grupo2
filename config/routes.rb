@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 's' => 'pages#student_home'
 
   resources :companies
+  resources :students
 end
