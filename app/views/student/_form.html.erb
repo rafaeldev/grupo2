@@ -1,22 +1,26 @@
-<%= form_with(model: student, url: student_update_skills_path(student), method: "post") do |f| %>
-  <ul>
-    <% @skill_map.each do |k, skill_list| %>
-    <li>
-      <h4><%= k %></h4>
+<h4>Minhas copetencias</h4>
 
-      <ul>
-        <% skill_list.each do |skill| %>
-        <li>
-          <div class="form-group form-check">
-            <%= check_box_tag 'skills[]', skill.id, skill.in?(@student.skills), class: "form-check-input" %>
-            <label class="form-check-label" for="<%= skill.name.parameterize %>"><%= skill.name %></label>
+<%= form_with(model: student, url: student_update_skills_path(student), method: "post") do |f| %>
+  <div class="container">
+    <div class="row">
+      <% @skill_map.each do |k, skill_list| %>
+      <div class="col">
+        <h4><%= k %></h4>
+
+        <div>
+          <% skill_list.each do |skill| %>
+          <div>
+            <div class="form-group form-check">
+              <%= check_box_tag 'skills[]', skill.id, skill.in?(@student.skills), class: "form-check-input" %>
+              <label class="form-check-label" for="<%= skill.name.parameterize %>"><%= skill.name %></label>
+            </div>
           </div>
-        </li>
-        <% end %>
-      </ul>
-    </li>
-    <% end %>
-  </ul>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
   <div class="col-lg-10 fixed-save-container">
     <%= f.submit "Salvar", class: "btn btn-block btn-success" %>
