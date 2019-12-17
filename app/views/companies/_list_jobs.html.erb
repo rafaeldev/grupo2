@@ -1,6 +1,6 @@
 <div class="list-group">
   <% @jobs_joined.each do |jj| %>
-    <a data-toggle="modal" data-target=".bd-example-modal-lg">
+    <a data-toggle="modal" data-target=".bd-example-modal-lg" data-student-id="<%= jj[:student].id %>">
       <div class="row list-group-item">
         <div class="col-8">
           <div class="font-weight-bold">

@@ -1,6 +1,6 @@
 <%= render layout: "pages/student_menu" do %>
-  <div class="container">
-    <h1>Seja bem vindo <%= @student.name %></h1>
+  <div class="container vh-100">
+    <h1 class="border-bottom mb-3">Seja bem vindo <%= @student.name %></h1>
 
     <%= render 'student/form', student: @student %>
   </div>
